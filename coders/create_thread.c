@@ -12,11 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Create all threads needed like the thread for the monitoring and each
- * coder's thread.
- */
-
 void	init_thread(t_data *data)
 {
 	int	index;
@@ -31,10 +26,7 @@ void	init_thread(t_data *data)
 	}
 }
 
-/**
- * Pause the main program until each thread have finished to work. In this case,
- * when monitoring put the variable 'simulation_active' to 0.
- */
+// Pause the main program until each thread have finished to work.
 
 void	join_thread(t_data *data)
 {

@@ -14,10 +14,6 @@
 
 void	free_memory(t_data *data);
 
-/**
- * Prints a custom error message to the standard error output and free memory.
- */
-
 int	print_error(char *str, char *details, t_data *data)
 {
 	if (data != NULL)
@@ -28,10 +24,6 @@ int	print_error(char *str, char *details, t_data *data)
 	fprintf(stderr, "\n");
 	return (1);
 }
-
-/**
- * Free memory of structure if there are not empty.
- */
 
 void	free_memory(t_data *data)
 {
@@ -51,9 +43,7 @@ void	free_memory(t_data *data)
 	}
 }
 
-/**
- * Print a custom message used to tell the user how to launch the program.
- */
+// Custom message to tell the user how to launch the program correctly.
 
 char	*print_usage(void)
 {

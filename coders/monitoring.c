@@ -15,12 +15,6 @@
 static int	check_burns_out(t_data *data, int *finish);
 static void	stop_simulation(t_data *data);
 
-/**
- * Function used by the monitoring thread. It check the burnout of each coder
- * and stop the simulation if a coder has burnout, or if all coders have
- * compiled the number of time requiered.
- */
-
 void	*monitoring_simulation(void *arg)
 {
 	t_data	*data;
@@ -44,11 +38,6 @@ void	*monitoring_simulation(void *arg)
 	return (NULL);
 }
 
-/**
- * Check each coder to know if they have burnout. If not, check the next.
- * Otherwise, stop the simulation, print the burnout in the log and return '1'.
- */
-
 static int	check_burns_out(t_data *data, int *finish)
 {
 	int	index;
@@ -70,12 +59,6 @@ static int	check_burns_out(t_data *data, int *finish)
 	}
 	return (0);
 }
-
-/**
- * Stop the simulation by setting the variable 'simulation active' to 0. Then,
- * send a broadcast to each queue to tell coder to quit it.
- * Protected by a mutex to prevent data-race.
- */
 
 static void	stop_simulation(t_data *data)
 {

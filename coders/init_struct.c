@@ -17,10 +17,7 @@ static void	fill_dongle_id(char *id_str, int index);
 static void	init_coders(t_data *data, t_coder *coder, int count);
 static void	init_basic_data_coders(t_data *data, t_coder *coder, int count);
 
-/**
- * Init the data structure default informations. Also create the binary tree
- * for the 'edf' scheduler.
- */
+// Init the data structure + create the binary tree for the 'edf' scheduler.
 
 int	init_struct(t_data *data)
 {
@@ -41,10 +38,6 @@ int	init_struct(t_data *data)
 	return (0);
 }
 
-/**
- * Give to each coders and dongles informations.
- */
-
 static void	create_coders_and_dongle(t_data *data)
 {
 	int	count;
@@ -60,10 +53,7 @@ static void	create_coders_and_dongle(t_data *data)
 	}
 }
 
-/**
- * Create for each dongle an unique identifier started with 'A'. If there are
- * more than 26 dongles, the next one will have the identifier 'AA' and so one.
- */
+// Create for each dongle an identifier started with 'A'.
 
 static void	fill_dongle_id(char *id_str, int index)
 {
@@ -89,9 +79,8 @@ static void	fill_dongle_id(char *id_str, int index)
 }
 
 /**
- * Assign the left and right dongles to a coder. Handles deadlock prevention
- * by inverting the dongle assignment order for the last coder, and manages
- * the single coder edge case.
+ * Assign the left and right dongles to a coder.
+ * Handles assignment for the last coder + the single coder edge case.
  */
 
 static void	init_coders(t_data *data, t_coder *coder, int count)
@@ -116,11 +105,6 @@ static void	init_coders(t_data *data, t_coder *coder, int count)
 	else
 		coder->left_dongle = &data->dongle[count];
 }
-
-/**
- * Initialize the basic variables of a coder structure, such as its ID,
- * initial burnout time, and set its dongle pointers to NULL.
- */
 
 static void	init_basic_data_coders(t_data *data, t_coder *coder, int count)
 {

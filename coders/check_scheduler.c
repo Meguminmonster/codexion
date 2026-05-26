@@ -12,11 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Check if the scheduler used is 'fifo'. If that the case, return '1' (True),
- * otherwise return '0' (False).
- */
-
 int	is_fifo(t_data *data)
 {
 	if (strcmp(FIFO, data->scheduler) == 0)

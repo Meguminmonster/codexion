@@ -12,12 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Print each action from a coder in the log in a specific format:
- * timestamp_im_ms "coder" "action"
- * Protected with a mutex to prevent mixed logs.
- */
-
 void	print_logs(int index, char *dongle_id, char *action, t_data *data)
 {
 	long long	time;

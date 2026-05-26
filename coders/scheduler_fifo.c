@@ -14,14 +14,6 @@
 
 static void	fifo_add_queue(t_data *data, t_coder *coder);
 
-/**
- * Manages the FIFO scheduling for a coder.
- *
- * Locks the queue control mutex and performs the requested action:
- * either adding the coder to the waiting queue or removing it and
- * broadcasting a signal to wake up other waiting coders.
- */
-
 int	scheduler_fifo(t_data *data, t_coder *coder, char *action)
 {
 	pthread_mutex_lock(&data->queue_control.lock);
@@ -37,14 +29,6 @@ int	scheduler_fifo(t_data *data, t_coder *coder, char *action)
 	pthread_mutex_unlock(&data->queue_control.lock);
 	return (0);
 }
-
-/**
- * Adds a coder to the FIFO queue and waits for its turn.
- *
- * The coder is added to the linked list. It then waits until it is the
- * first in line AND successfully takes both dongles. Uses a condition
- * variable for sleeping if it is first but dongles are currently unavailable.
- */
 
 static void	fifo_add_queue(t_data *data, t_coder *coder)
 {

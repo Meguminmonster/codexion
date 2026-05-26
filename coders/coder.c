@@ -79,11 +79,11 @@ int	take_dongle(t_coder *coder)
 }
 
 /**
- * This function will perform action for a specific coder. For debugging and
- * refactoring, the coder will juste print it to the log and sleep x time.
- * For the compiling action, first, the coder burnout will be reset. Then,
- * the action will be printed to the log and the coder will sleep x time.
- * If a coder have compiling x number of time, he can stop. Otherwise, he will
+ * For debugging and refactoring, 
+ * the coder will print it to the log and sleep x time.
+ * For the compiling action, first, the coder burnout will be reset,
+ * then the action will be printed to the log and the coder will sleep x time.
+ * If a coder have compiling x number of time, he can stop, otherwise, he will
  * release the dongle and continue.
  */
 

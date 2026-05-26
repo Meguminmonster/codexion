@@ -12,15 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Program entry point.
- *
- * Initialize the 'data' structure and put memory at 0. Then, check if the
- * arguments are valid, otherwise return '1' and stop the program. If not,
- * init mutex and threads and launch the simulation. Once done, destroy all
- * created mutex, free the memory and stop the program.
- */
-
 int	main(int argc, char **argv)
 {
 	t_data	data;

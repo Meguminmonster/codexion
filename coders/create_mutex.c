@@ -15,10 +15,6 @@
 static void	init_mutex_cond(t_data *data);
 static void	init_dongles_mutex(t_data *data);
 
-/**
- * Initialize all mutex needed by the program.
- */
-
 void	init_mutex(t_data *data)
 {
 	pthread_mutex_init(&data->mutex_print, NULL);
@@ -29,20 +25,11 @@ void	init_mutex(t_data *data)
 	init_mutex_cond(data);
 }
 
-/**
- * Init the variable condition for the queue system.
- */
-
 static void	init_mutex_cond(t_data *data)
 {
 	pthread_cond_init(&data->queue_control.cond, NULL);
 	pthread_cond_init(&data->heap_control.cond, NULL);
 }
-
-/**
- * Initialize mutex for each dongle and coder like the mutex for the burnout,
- * or the dongle.
- */
 
 static void	init_dongles_mutex(t_data *data)
 {

@@ -12,11 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Unlock the dongle and put it in cooldown. Then, broadcast to each coder in
- * the queue to unlock them so they can try to take the dongle.
- */
-
 void	release_dongles(t_coder *coder, t_data *data)
 {
 	long long	curr_time;
@@ -41,12 +36,6 @@ void	release_dongles(t_coder *coder, t_data *data)
 		pthread_mutex_unlock(&data->heap_control.lock);
 	}
 }
-
-/**
- * Check if the specific dongle is no more in cooldown using the get_sim_time
- * function. Return '0' (False) is the dongle is still in cooldown. '1' (True)
- * otherwise.
- */
 
 int	try_take_dongle(t_dongle *dongle, t_data *data)
 {

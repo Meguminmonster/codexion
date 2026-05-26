@@ -12,10 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Debug to print the structure with current informations provided by the user.
- */
-
 void	debug_print_struct(t_data *data)
 {
 	int	count;

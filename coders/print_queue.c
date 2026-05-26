@@ -12,10 +12,6 @@
 
 #include "codexion.h"
 
-/**
- * Debug function to print the current queue of the program.
- */
-
 void	debug_print_queue(t_queue_manager *manager)
 {
 	int		count;

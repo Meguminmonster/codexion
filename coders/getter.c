@@ -12,10 +12,7 @@
 
 #include "codexion.h"
 
-/**
- * Getter function to know if the simulation is activate or not.
- * Protected by a mutex to prevent data-race.
- */
+// Function to know if the simulation is activate or not.
 
 int	get_simulation(t_data *data)
 {
@@ -28,10 +25,7 @@ int	get_simulation(t_data *data)
 	return (status);
 }
 
-/**
- * Getter function to retrieve the timestamp at which a coder will burn out.
- * Protected by a mutex to prevent data-race.
- */
+// Function to retrieve the timestamp at which a coder will burn out.
 
 long long	get_burnout(t_coder *coder)
 {
@@ -44,11 +38,7 @@ long long	get_burnout(t_coder *coder)
 	return (burnout);
 }
 
-/**
- * Getter function to check if a coder has reached the required number of
- * compilations.
- * Protected by a mutex to prevent data-race.
- */
+// Function to check if a coder has reached the required number of compilations.
 
 int	get_have_finished(t_coder *coder)
 {

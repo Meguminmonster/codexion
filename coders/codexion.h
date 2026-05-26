@@ -13,10 +13,6 @@
 #ifndef CODEXION_H
 # define CODEXION_H
 
-// -------------------- //
-//		INCLUDES		//
-// -------------------- //
-
 # include <stdio.h>
 # include <pthread.h>
 # include <stdlib.h>
@@ -24,23 +20,14 @@
 # include <sys/time.h>
 # include <unistd.h>
 
-// -------------------- //
-//		MACROS			//
-// -------------------- //
-
-// Errors message //
 # define STR_ERR_MALLOC		"Could not allocate memory.\n"
 # define STR_ERR_INV_ARG	"Invalid argument"
-
-// Logs message //
 # define LOG_TAKE_DONGLE	"[%lld] Coder %d has taken dongle %s\n"
 # define LOG_COMPILING		"[%lld] Coder %d is compiling (%d)\n"
 # define LOG_DEBUGGING		"[%lld] Coder %d is debugging\n"
 # define LOG_REFACTOR		"[%lld] Coder %d is refactoring\n"
 # define LOG_BURNS_OUT		"[%lld] Coder %d burned out\n"
 # define LOG_SUCCESS		"All coders have compiled."
-
-// Action //
 # define ACT_TAKE		"takedongle"
 # define ACT_COMP		"compile"
 # define ACT_DEBUG		"debug"
@@ -48,17 +35,9 @@
 # define ACT_BURNS		"burns_out"
 # define REMOVE_QUEUE	"remove_q"
 # define ADD_QUEUE		"add_q"
-
-// Max coders //
 # define MAX_CODERS 	300
-
-// Scheduler //
 # define FIFO			"fifo"
 # define EDF			"edf"
-
-// -------------------- //
-//		STRUCTURES		//
-// -------------------- //
 
 typedef struct s_data			t_data;
 typedef struct s_coder			t_coder;
@@ -132,10 +111,6 @@ typedef struct s_data
 	pthread_mutex_t	mutex_print;
 	pthread_mutex_t	mutex_simu;
 }					t_data;
-
-// -------------------- //
-//		PROTOTYPES		//
-// -------------------- //
 
 // Parsing //
 int				check_arg(t_data *data, char **arg);

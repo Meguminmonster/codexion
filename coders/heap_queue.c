@@ -16,13 +16,7 @@ static void	heap_check_deadline(t_heap	*manager, int i);
 static int	heap_compare(t_coder *curr_coder, t_coder *coder);
 static void	heap_swap(t_coder **tree, int i, int j);
 
-/**
- * Adds a coder to the heap priority queue.
- *
- * Inserts the new coder at the end of the tree, then pull up the coder by
- * swapping it with its parent until the coder with the earliest deadline is at
- * the top of the tree.
- */
+// Adds a coder to the heap priority queue.
 
 void	heap_push(t_heap *manager, t_coder *coder)
 {
@@ -43,13 +37,7 @@ void	heap_push(t_heap *manager, t_coder *coder)
 	}
 }
 
-/**
- * Removes a specific coder from the queue.
- *
- * Finds the coder in the tree, replaces it with the last element of the heap,
- * decreases the size, and then restores the heap property by either pull it up
- * or pull down the replacement element.
- */
+// Removes a specific coder from the queue.
 
 void	heap_pop(t_heap *manager, t_coder *coder)
 {
@@ -74,12 +62,7 @@ void	heap_pop(t_heap *manager, t_coder *coder)
 	heap_check_deadline(manager, i);
 }
 
-/**
- * Maintains the queue property by shifting an element down the tree.
- *
- * Compares the current element with its children. If a child has a more urgent
- * deadline, the elements are swapped. This process continues down the branches.
- */
+// If a child has a more urgent deadline, the elements are swapped.
 
 static void	heap_check_deadline(t_heap	*manager, int i)
 {
@@ -107,23 +90,10 @@ static void	heap_check_deadline(t_heap	*manager, int i)
 	}
 }
 
-/**
- * Compares two coders based on their burnout deadlines.
- *
- * Evaluates which of the two coders has the earliest burnout time to determine
- * their priority in the min-heap.
- *
- * Return 1 if the current coder has an earlier deadline, 0 otherwise.
- */
-
 static int	heap_compare(t_coder *curr_coder, t_coder *coder)
 {
 	return (get_burnout(curr_coder) < get_burnout(coder));
 }
-
-/**
- * Swaps the position of two coders in the heap array
- */
 
 static	void	heap_swap(t_coder **tree, int i, int j)
 {

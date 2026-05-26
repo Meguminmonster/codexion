@@ -13,11 +13,8 @@
 #include "codexion.h"
 
 /**
- * Gets the current absolute time in milliseconds.
- *
- * Retrieves the system's current time using gettimeofday and converts the
- * seconds and microseconds into a single milliseconds value. Then return the
- * current time in milliseconds.
+ * Gets the time using gettimeofday and converts the
+ * seconds and microseconds into a milliseconds value. 
  */
 
 long long	get_time_ms(void)
@@ -28,11 +25,7 @@ long long	get_time_ms(void)
 	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 }
 
-/**
- * Compares the current system time with the recorded start time in the data
- * structure to determine how much time has passed. This is used to timestamp
- * the logs accurately.
- */
+// Compares the current system time with the recorded start time.
 
 long long	get_sim_time(t_data *data)
 {
