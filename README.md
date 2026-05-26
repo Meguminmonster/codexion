@@ -6,12 +6,19 @@ __Descripción__
 En este proyecto creamos una simulación en la cual:
 
 • Tenemos programadores en un una mesa circular. En el centro, hay un Compilador Cuántico compartido.
+
 • Las personas alternan entre compilar, depurar o refactorizar.
+
 • Hay dongles USB en la mesa. Tantos dongles como personas que programan.
+
 • Compilar código cuántico requiere dos dongles conectados simultáneamente.
+
 • Cuando una persona termina de compilar, devuelve ambos dongles a la mesa y comienza a depurar.
+
 • Una vez terminada la depuración, comienza a refactorizar. 
+
 • La simulación se detiene cuando alguien se agota o todos han cumplido una cuota establecida.
+
 • Todas las personas necesitan compilar regularmente para no agotarse.
 
 __Instrucciones__
